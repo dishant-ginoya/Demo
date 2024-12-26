@@ -41,4 +41,38 @@ def main():
 
 if __name__ == '__main__':
     main()
-  
+
+
+
+
+
+
+
+
+import zipfile
+import os
+from PIL import Image
+
+# Define the path of the zip file
+zip_file_path = 'path/to/your/zipfile.zip'
+extracted_folder = 'extracted_files/'
+
+# Step 1: Extract the contents of the zip file
+with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+    # Extract all contents into a specified folder
+    zip_ref.extractall(extracted_folder)
+
+# Step 2: Read .jpg images inside the extracted folder
+for root, dirs, files in os.walk(extracted_folder):
+    for file in files:
+        if file.lower().endswith('.jpg'):  # Check if it's a .jpg file
+            image_path = os.path.join(root, file)
+            print(f'Reading image: {image_path}')
+            
+            # Step 3: Open and process the image
+            try:
+                with Image.open(image_path) as img:
+                    img.show()  # This will display the image, or you can save, manipulate, etc.
+            except Exception as e:
+                print(f"Could not open image {image_path}: {e}")
+                
