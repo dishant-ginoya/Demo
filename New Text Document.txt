@@ -1,0 +1,29 @@
+F:\Setup\Python\Python310\python.exe \\wsl$\Ubuntu-24.04\home\dishant\workspace\odoo_17\odoo\odoo-bin -c \\wsl$\Ubuntu-24.04\home\dishant\workspace\odoo_17\conf\odoo17.conf 
+2024-12-30 15:49:53,253 536 INFO ? odoo: Odoo version 17.0 
+2024-12-30 15:49:53,256 536 INFO ? odoo: Using configuration file at \\wsl$\Ubuntu-24.04\home\dishant\workspace\odoo_17\conf\odoo17.conf 
+2024-12-30 15:49:53,256 536 INFO ? odoo: addons paths: ['\\\\wsl$\\Ubuntu-24.04\\home\\dishant\\workspace\\odoo_17\\odoo\\odoo\\addons', '\\\\wsl$\\Ubuntu-24.04\\home\\dishant\\workspace\\odoo_17\\odoo\\addons', 'c:\\users\\dishant\\appdata\\local\\openerp s.a\\odoo\\addons\\17.0', '\\\\wsl$\\ubuntu-24.04\\home\\dishant\\workspace\\odoo_17\\custom_addons', '\\\\wsl$\\ubuntu-24.04\\home\\dishant\\workspace\\odoo_17\\enterprise', '\\\\wsl$\\ubuntu-24.04\\home\\dishant\\workspace\\odoo_17\\odoo\\addons', '\\\\wsl$\\ubuntu-24.04\\home\\dishant\\workspace\\odoo_17\\odoo\\odoo\\addons', '\\\\wsl$\\ubuntu-24.04\\home\\dishant\\workspace\\odoo_17\\odoo'] 
+2024-12-30 15:49:53,257 536 INFO ? odoo: database: odoo17@localhost:5433 
+2024-12-30 15:49:54,302 536 INFO ? odoo.addons.base.models.ir_actions_report: You need Wkhtmltopdf to print a pdf version of the reports. 
+2024-12-30 15:49:58,347 536 INFO ? odoo.service.server: HTTP service (werkzeug) running on Dishant:1717 
+2024-12-30 15:50:15,022 536 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "\\wsl$\Ubuntu-24.04\home\dishant\workspace\odoo_17\odoo\odoo\http.py", line 2203, in __call__
+    if self.get_static_file(httprequest.path):
+  File "\\wsl$\Ubuntu-24.04\home\dishant\workspace\odoo_17\odoo\odoo\http.py", line 2103, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "\\wsl$\Ubuntu-24.04\home\dishant\workspace\odoo_17\odoo\odoo\tools\func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "\\wsl$\Ubuntu-24.04\home\dishant\workspace\odoo_17\odoo\odoo\http.py", line 2073, in statics
+    manifest = get_manifest(module)
+  File "\\wsl$\Ubuntu-24.04\home\dishant\workspace\odoo_17\odoo\odoo\modules\module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "\\wsl$\Ubuntu-24.04\home\dishant\workspace\odoo_17\odoo\odoo\modules\module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "\\wsl$\Ubuntu-24.04\home\dishant\workspace\odoo_17\odoo\odoo\modules\module.py", line 325, in load_manifest
+    with tools.file_open(readme_path[0]) as fd:
+  File "\\wsl$\Ubuntu-24.04\home\dishant\workspace\odoo_17\odoo\odoo\tools\misc.py", line 214, in file_open
+    path = file_path(name, filter_ext=filter_ext, env=env)
+  File "\\wsl$\Ubuntu-24.04\home\dishant\workspace\odoo_17\odoo\odoo\tools\misc.py", line 193, in file_path
+    raise FileNotFoundError("File not found: " + file_path)
+FileNotFoundError: File not found: \\wsl$\Ubuntu-24.04\home\dishant\workspace\odoo_17\odoo\addons\website_sale\README.md
+2024-12-30 15:50:15,303 536 INFO ? werkzeug: 172.23.128.1 - - [30/Dec/2024 15:50:15] "GET /web/database/selector HTTP/1.1" 500 - 1 0.021 6.236
